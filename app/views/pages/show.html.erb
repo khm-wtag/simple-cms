@@ -1,0 +1,35 @@
+
+<% if !flash[:notice].blank? %>
+    <div class="notice">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+
+<h1>Pages#show</h1>
+<p>Find me in app/views/pages/show.html.erb</p>
+
+<%= link_to("<< Back to List", subjects_path, :class => 'back-link') %>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <td><%= @subject.name %></td>
+        </tr>
+        <tr>
+            <th>Position</th>
+            <td><%= @subject.position %></td>
+        </tr>
+        <tr>
+            <th>Visible?</th>
+            <td><%= @subject.visible ? 'true' : 'false' %></td>
+        </tr>
+        <tr>
+            <th>Created</th>
+            <td><%= @subject.created_at %></td>
+        </tr>
+        <tr>
+            <th>Updated at</th>
+            <td><%= @subject.updated_at %></td>
+        </tr>
+    </table>
+</div>
